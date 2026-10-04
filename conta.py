@@ -23,3 +23,12 @@ class Conta:
         print('=== EXTRATO ===')
         for operacao in self.extrato:
             print(operacao)
+
+    def transferir(self,valor, destino):
+        if self.saldo >= valor:
+            destino.saldo += valor
+            self.saldo -= valor
+            self.extrato.append(f'Transferência enviada: R${valor}')
+            destino.extrato.append(f'Transferência recebida: R${valor}')
+        else:
+            print('Saldo insuficiente')
