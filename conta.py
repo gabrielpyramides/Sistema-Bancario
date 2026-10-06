@@ -32,3 +32,7 @@ class Conta:
             destino.extrato.append(f'Transferência recebida: R${valor}')
         else:
             print('Saldo insuficiente')
+
+    def dados_para_dict(self):
+        dados_para_dict = {'Títular': self.titular, 'Saldo' : self.saldo, 'Extrato' : self.extrato}
+        return dados_para_dict
