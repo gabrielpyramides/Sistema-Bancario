@@ -9,8 +9,12 @@ class Conta:
         return f'Títular: {self.titular} | Saldo: R${self.saldo}'
 
     def depositar(self, valor):
-        self.saldo += valor
-        self.extrato.append(f'Depósito: R${valor}')
+        if valor <= 0:
+            print("Valor inválido")
+            return
+        else:
+            self.saldo += valor
+            self.extrato.append(f'Depósito: R${valor}')
 
     def sacar(self, valor):
         if self.saldo >= valor:
@@ -34,5 +38,5 @@ class Conta:
             print('Saldo insuficiente')
 
     def dados_para_dict(self):
-        dados_para_dict = {'Títular': self.titular, 'Saldo' : self.saldo, 'Extrato' : self.extrato}
+        dados_para_dict = {'titular': self.titular, 'saldo' : self.saldo, 'extrato' : self.extrato}
         return dados_para_dict
