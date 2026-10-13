@@ -1,12 +1,13 @@
 class Conta:
-    def __init__(self,titular,saldo = 0):
+    def __init__(self, titular,numero,saldo = 0):
         self.titular = titular
+        self.numero = numero
         self.saldo = float(saldo)
         self.extrato = []
 
 
     def __str__ (self):
-        return f'Títular: {self.titular} | Saldo: R${self.saldo}'
+        return f'Títular: {self.titular} | Número: {self.numero} | Saldo: R${self.saldo}'
 
     def depositar(self, valor):
         if valor <= 0:
@@ -38,5 +39,5 @@ class Conta:
             print('Saldo insuficiente')
 
     def dados_para_dict(self):
-        dados_para_dict = {'titular': self.titular, 'saldo' : self.saldo, 'extrato' : self.extrato}
+        dados_para_dict = {'titular': self.titular,'numero' : self.numero , 'saldo' : self.saldo, 'extrato' : self.extrato}
         return dados_para_dict
