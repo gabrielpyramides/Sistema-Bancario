@@ -23,3 +23,11 @@ def sacar(banco):
     Conta.sacar(conta, valor)
     print('Saque realizado!')
 
+def transferir(banco):
+    numero = int(input('Digite o número da sua conta: '))
+    conta = banco.buscar_conta(numero)
+    numero_destino = int(input('Digite o número da conta que deseja transferir: '))
+    destino = banco.buscar_conta(numero_destino)
+    valor = float(input('Digite o valor que deseja transferir: R$'))
+    Conta.transferir(conta,valor, destino)
+    print('Transferência realizada!')
