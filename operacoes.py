@@ -31,3 +31,9 @@ def transferir(banco):
     valor = float(input('Digite o valor que deseja transferir: R$'))
     Conta.transferir(conta,valor, destino)
     print('Transferência realizada!')
+    
+def exibir_extrato(banco):
+    numero = int(input('Digite o número da conta que deseja ver o extrato: '))
+    conta = banco.buscar_conta(numero)
+    Conta.mostrar_extrato(conta)
+
