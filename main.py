@@ -1,6 +1,6 @@
 from banco import Banco
 from persistencia import carregar_dados, salvar_dados
-from operacoes import criar_conta, depositar
+from operacoes import criar_conta, depositar, sacar
 
 banco = Banco()
 
@@ -34,12 +34,13 @@ def inciar_programa():
                 if escolha == 1:
                     criar_conta(banco)
                     salvar_dados(banco)
-                    print('Conta criada e salva com sucesso!')
                 elif escolha == 2:
                    depositar(banco)
                    salvar_dados(banco)
                 elif escolha == 3:
-                    pass
+                    sacar(banco)
+                    salvar_dados(banco)
+            else:
                 print('Digite uma opção entre 0 e 6')
         except ValueError:
             print('Digite uma opção valida')

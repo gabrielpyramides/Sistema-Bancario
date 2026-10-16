@@ -2,7 +2,7 @@ class Conta:
     def __init__(self, titular,numero,saldo = 0):
         self.titular = titular
         self.numero = numero
-        self.saldo = float(saldo)
+        self.saldo = saldo
         self.extrato = []
 
 
@@ -14,15 +14,16 @@ class Conta:
             print("Valor inválido")
             return
         else:
-            self.saldo += valor
-            self.extrato.append(f'Depósito: R${valor}')
+            self.saldo += valor 
+            self.extrato.append(f'deposito: R${valor}')
 
     def sacar(self, valor):
         if self.saldo >= valor:
             self.saldo -= valor
-            self.extrato.append(f'Saque: R${valor}')
+            self.extrato.append(f'saque: R${valor}')
         else:
             print('Saldo insuficiente!')
+        
 
     def mostrar_extrato(self):
         print('=== EXTRATO ===')
